@@ -20,7 +20,11 @@ QtTestNewickUtilsdialog::QtTestNewickUtilsdialog(QWidget *parent) :
     };
     try
     {
-      NewickUtils().NewickToPhylogeny(newick,temp_png_filename,NewickUtils::GraphicsFormat::svg);
+      ribi::NewickUtils().NewickToPhylogeny(
+        newick,
+        temp_png_filename,
+        ribi::NewickUtils::GraphicsFormat::svg
+      );
       ui->image_NewickToPhylogeny->setPixmap(QPixmap(temp_png_filename.c_str()));
 
       //Delete the temporary file
@@ -38,10 +42,10 @@ QtTestNewickUtilsdialog::QtTestNewickUtilsdialog(QWidget *parent) :
     };
     try
     {
-      NewickUtils().NewickToPhylogeny(
+      ribi::NewickUtils().NewickToPhylogeny(
         newick,
         temp_png_filename,
-        NewickUtils::GraphicsFormat::svg,
+        ribi::NewickUtils::GraphicsFormat::svg,
         false
       );
       ui->image_NewickToPhylogenyExtant->setPixmap(QPixmap(temp_png_filename.c_str()));
